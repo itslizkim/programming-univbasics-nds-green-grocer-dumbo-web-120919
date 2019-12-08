@@ -40,7 +40,7 @@ end
 def apply_coup_to_cart(match_item, coupon, cart)
   match_item[:count] -= coupon[:num]
   item_w_coup = coupon_price(coupon)
-  item_w_coup[:clearance] = matching_item[:clearance]
+  item_w_coup[:clearance] = match_item[:clearance]
   cart << item_w_coup
 end
 
