@@ -75,8 +75,24 @@ def apply_clearance(cart)
 
 end
 
+def items_total_cost(i)
+  i[:count] * i[:price]
+end
+  
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
+  total = 0
+  i = 0
+
+  consol_cart = consolidate_cart(cart)
+  apply_coupons(consol_cart,coupons)
+  apply_clearance(consol_cart)
+
+  while i < consol_cart.length do
+    total += items_total_cost(ccart[i])
+    i += 1
+  end
+
+  total >= 100 ? total * (1.0 - 0.10) : total
   #
   # This method should call
   # * consolidate_cart
