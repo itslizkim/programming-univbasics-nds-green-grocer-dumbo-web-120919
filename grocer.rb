@@ -63,7 +63,7 @@ end
 
 def apply_clearance(cart)
   i = 0
-  while 1 < cart.length do
+  while i < cart.length do
     item = cart[i]
     if item[:clearance]
       discounted_price = ((1 - CLEARANCE_ITEM_DISCOUNT_RATE) * item[:price]).round(2)
