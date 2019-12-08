@@ -41,11 +41,11 @@ def apply_coupons(cart, coupons)
     coupon_applied_cart = item_in_cart && items_w_coupon[:count] >= coupon[:num]
 
     if item_in_cart and coupon_applied_cart
-      
 
 
 
-    
+
+
   end
 
     # Consult README for inputs and outputs
