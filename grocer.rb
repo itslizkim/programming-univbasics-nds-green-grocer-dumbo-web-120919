@@ -38,7 +38,16 @@ def coupon_price(c)
     :count => c[:num]
   }
 end
-  
+
+def apply_coup_to_cart(match_item, coupon, cart)
+  match_item[:count] -= coupon[:num]
+  item_w_coup = coupon_price(coupon)
+  item_w_coup[:clearance] = matching_item[:clearance]
+  cart << item_w_coup
+
+end
+
+
 def apply_coupons(cart, coupons)
   i = 0
   while i <coupons.count do
@@ -48,14 +57,12 @@ def apply_coupons(cart, coupons)
     coupon_applied_cart = item_in_cart && items_w_coupon[:count] >= coupon[:num]
 
     if item_in_cart and coupon_applied_cart
-
-
-
-
-
+      apply_coup_to_cart(items_w_coupon,coupon,cart)
+    end
+    i+=1
   end
 
-    # Consult README for inputs and outputs
+  cart  # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
 end
