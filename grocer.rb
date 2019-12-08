@@ -26,8 +26,6 @@ def consolidate_cart(cart)
   end
   result
 
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
 end
 
 def coupon_price(c)
@@ -44,9 +42,7 @@ def apply_coup_to_cart(match_item, coupon, cart)
   item_w_coup = coupon_price(coupon)
   item_w_coup[:clearance] = matching_item[:clearance]
   cart << item_w_coup
-
 end
-
 
 def apply_coupons(cart, coupons)
   i = 0
@@ -62,9 +58,7 @@ def apply_coupons(cart, coupons)
     i+=1
   end
 
-  cart  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This method **should** update cart
+  cart
 end
 
 def apply_clearance(cart)
