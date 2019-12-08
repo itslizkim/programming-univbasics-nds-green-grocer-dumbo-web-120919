@@ -30,8 +30,25 @@ def consolidate_cart(cart)
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
 end
 
+def coupon_price(c)
+  round_price = (c[:cost].to_f * 1.0 / c[:num]).round(2)
 def apply_coupons(cart, coupons)
-  # Consult README for inputs and outputs
+  i = 0
+  while i <coupons.count do
+    coupon = coupons[i]
+    items_w_coupon = find_item_by_name_in_collection(coupon[:item],cart)
+    item_in_cart = !items_w_coupon
+    coupon_applied_cart = item_in_cart && items_w_coupon[:count] >= coupon[:num]
+
+    if item_in_cart and coupon_applied_cart
+      
+
+
+
+    
+  end
+
+    # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
 end
