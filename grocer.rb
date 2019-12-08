@@ -46,10 +46,10 @@ end
 
 def apply_coupons(cart, coupons)
   i = 0
-  while i <coupons.count do
+  while i < coupons.count do
     coupon = coupons[i]
     items_w_coupon = find_item_by_name_in_collection(coupon[:item],cart)
-    item_in_cart = !items_w_coupon
+    item_in_cart = !!items_w_coupon
     coupon_applied_cart = item_in_cart && items_w_coupon[:count] >= coupon[:num]
 
     if item_in_cart and coupon_applied_cart
