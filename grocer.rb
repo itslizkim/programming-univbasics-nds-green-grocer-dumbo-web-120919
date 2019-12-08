@@ -78,7 +78,7 @@ end
 def items_total_cost(i)
   i[:count] * i[:price]
 end
-  
+
 def checkout(cart, coupons)
   total = 0
   i = 0
